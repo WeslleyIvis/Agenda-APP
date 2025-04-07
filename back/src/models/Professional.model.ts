@@ -1,6 +1,24 @@
-import mongoose from "mongoose";
+import mongoose, {Document, Schema} from "mongoose";
 
-const professionalSchema = new mongoose.Schema({
+export interface IWorkingHour {
+    day:  'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday';
+    start: string;
+    end: string
+}
+
+export interface IProfessional extends Document {
+    name: string;
+    email: string;
+    password: string;
+    phone_number: string;
+    image?: string;
+    working_hours: IWorkingHour[];
+    role: 'admin' | 'professional';
+    linked_agenda: mongoose.Types.ObjectId[]
+    rewards_received: mongoose.Types.ObjectId[]
+}
+
+const professionalSchema = new Schema<IProfessional>({
     name: {type: String, required: true},
     email: {type: String, required: true},
     password: {type: String, required: true},
@@ -22,17 +40,17 @@ const professionalSchema = new mongoose.Schema({
 
     linked_agenda: [
         {
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'Appointment'
         }
     ],
 
     rewards_received: [
         {
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'Reviews'
         }
     ]
 }, {timestamps: true})
 
-export default mongoose.model('Professional', professionalSchema)
+export default mongoose.model<IProfessional>('Professional', professionalSchema)
