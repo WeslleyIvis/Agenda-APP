@@ -1,4 +1,5 @@
 import mongoose, {Document, Schema} from "mongoose";
+import bcrypt from 'bcryptjs'
 
 export interface IWorkingHour {
     day:  'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday';
@@ -52,5 +53,18 @@ const professionalSchema = new Schema<IProfessional>({
         }
     ]
 }, {timestamps: true})
+
+// Encriptação da senha 😎
+professionalSchema.pre('save', async function (next) {
+    if (!this.isModified('password')) return next();
+
+    try {
+        const salt = await bcrypt.genSalt(10)
+        this.password = await bcrypt.hash(this.password, salt)
+        next()
+    } catch(err) {
+        return next (err as any)
+    }
+})
 
 export default mongoose.model<IProfessional>('Professional', professionalSchema)

@@ -1,8 +1,20 @@
 import { Request, Response} from 'express';
 import Professional from '../models/Professional.model';
 
-export const createProfessional = async (req: Request, res: Response) => {
+export const createProfessional = async (req: Request, res: Response):Promise<Response | undefined> => {
+    const { email, phone_number } = req.body
+    
     try {
+        const existingProfessional = await Professional.findOne({ email })
+        if(existingProfessional) {
+            return res.status(400).json({message: "Email já está em uso!!!"})
+        }
+        
+        const existingPhone = await Professional.findOne({ phone_number })
+        if(existingPhone) {
+            return res.status(400).json({message: "Número já está em uso!!!"})
+        }
+        
         const newProfessional = await Professional.create(req.body)
         res.status(201).json(newProfessional)
     } catch(error) {
