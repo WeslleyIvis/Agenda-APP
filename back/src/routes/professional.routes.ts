@@ -8,10 +8,12 @@ import {
 } from '../controllers/professional.controller'
 
 const professionalRouter = Router()
+
 // @ts-ignore
 professionalRouter.post('/', createProfessional)
 
 professionalRouter.get('/', getAllProfessionals)
+
 // @ts-ignore
 professionalRouter.put('/:id', updateProfessional);
 

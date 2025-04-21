@@ -13,8 +13,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/professionals', professionalRouter)
+
 app.use('/api/auth', authRouter)
 
 export default app
-
 

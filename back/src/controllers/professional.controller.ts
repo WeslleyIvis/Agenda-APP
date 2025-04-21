@@ -1,7 +1,7 @@
 import { Request, Response} from 'express';
 import Professional from '../models/Professional.model';
 
-export const createProfessional = async (req: Request, res: Response):Promise<Response | undefined> => {
+export const createProfessional = async (req: Request, res: Response): Promise<Response | undefined> => {
     const { email, phone_number } = req.body
     
     try {
@@ -33,11 +33,12 @@ export const getAllProfessionals = async(req: Request, res: Response) => {
 
 export const getProfessionalById = async (req: Request, res: Response): Promise<Response | undefined> => {
     try {
-        const professional = await Professional.findById(req.params.id);
+        const { id } = req.params
+        const professional = await Professional.findById(id);
         if (!professional) {
             return res.status(404).json({message: 'Profissional não encontrado'})
         }
-        res.status(200).json(Professional)
+        res.status(200).json(professional)
     } catch (error) {
         res.status(500).json({error: 'Erro ao buscar profissional', details: error})
     }
