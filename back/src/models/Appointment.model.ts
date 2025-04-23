@@ -5,7 +5,7 @@ export interface IAppointment extends Document {
   hour: string;
   client: mongoose.Types.ObjectId;
   professional: mongoose.Types.ObjectId;
-  service: mongoose.Types.ObjectId[];
+  service?: mongoose.Types.ObjectId[];
   value: number;
   status: 'Agendado' | 'Concluído' | 'Cancelado';
   paid: boolean;
