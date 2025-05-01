@@ -1,11 +1,8 @@
 import {Request, Response} from 'express';
 import User from "../models/User.model";
-import { error } from 'console';
 
 export const createUser = async (req: Request, res: Response): Promise<Response | undefined> => 
-    {
-        console.log("Funcione por favor!", req.body);
-        
+    {   
         const {email, phone_number} = req.body
 
         try
