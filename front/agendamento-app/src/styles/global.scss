@@ -1,0 +1,7 @@
+@use './abstracts' as *;
+@use './base/reset';
+
+body {
+  font-family: $font-stack;
+  background-color: $background_color_dark;
+}

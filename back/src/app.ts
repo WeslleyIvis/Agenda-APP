@@ -3,7 +3,8 @@ import cors from 'cors'
 import professionalRouter from './routes/professional.routes';
 import authRouter from './routes/auth.routs';
 import userRouter from './routes/user.routes';
-
+import AppointmentRouter from './routes/appointment.routes';
+import serviceRouter from './routes/service.routes';
 const app = express();
 
 app.use(cors())
@@ -16,7 +17,8 @@ app.get('/', (req, res) => {
 app.use('/api/professionals', professionalRouter)
 app.use('/api/auth', authRouter)
 app.use('/api/users', userRouter)
-
+app.use('/api/appointments', AppointmentRouter)
+app.use('/api/services', serviceRouter)
 export default app
 
 
