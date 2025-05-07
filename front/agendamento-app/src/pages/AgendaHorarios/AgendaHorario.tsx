@@ -1,13 +1,13 @@
-import MenuMobile from "../../components/menu_mobile/MenuMobile";
-import ButtonVoltar from "../../components/ButtonVoltar/ButtonVoltar";
+import MenuMobile from '../../components/menu_mobile/MenuMobile';
+import ButtonVoltar from '../../components/ButtonVoltar/ButtonVoltar';
 
 const AgendaHorario = () => {
-    return (
-        <>
-            <ButtonVoltar />
-            <MenuMobile />
-        </>
-    )
-}
+  return (
+    <>
+      <ButtonVoltar />
+      <MenuMobile />
+    </>
+  );
+};
 
-export default AgendaHorario
+export default AgendaHorario;
