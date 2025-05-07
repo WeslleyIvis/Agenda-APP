@@ -6,9 +6,10 @@ type ButtonProps = {
   children?: React.ReactNode
 };
 
-const Button: React.FC<ButtonProps> = ({ type = 'button', className, children }) => {
+const Button: React.FC<ButtonProps> = ({type = 'button', className, children}) => {
   return (
-    <button type={type} className={className}>
+    <button 
+      type={type} className={className}>
       {children}
     </button>
   );

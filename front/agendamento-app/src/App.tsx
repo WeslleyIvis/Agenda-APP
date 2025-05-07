@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AgendarHorario from './pages/Agendar_horario';
-import TypographyTest from './pages/TypographyTest/TypographyTest';
+import AgendarHorario from './pages/AgendaHorarios/AgendaHorario';
 
 function App() {
 
@@ -8,9 +7,9 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/' element={<TypographyTest />}></Route>
+          <Route path='/' element={<AgendarHorario />}></Route>
         </Routes>
-      </Router>
+      </Router>      
     </>
   );
 }

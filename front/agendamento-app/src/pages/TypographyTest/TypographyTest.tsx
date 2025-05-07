@@ -1,4 +1,4 @@
-import './TypographyTest.scss'
+import './TypographyTest.scss';
 
 export default function TypographyTest() {
   return (
