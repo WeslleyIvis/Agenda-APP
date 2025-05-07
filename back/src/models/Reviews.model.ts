@@ -4,7 +4,7 @@ export interface IReview extends Document {
     date: Date;
     client: mongoose.Types.ObjectId;
     professional: mongoose.Types.ObjectId;
-    haircut: mongoose.Types.ObjectId;
+    service?: mongoose.Types.ObjectId;
     comment?: string;
     rating: number
 }
@@ -21,7 +21,7 @@ const reviewSchema = new Schema<IReview>({
         ref:'Professional', 
         require: true
     },
-    haircut: [
+    service: [
         {
             type: mongoose.Schema.Types.ObjectId, 
             ref:'Service', 
