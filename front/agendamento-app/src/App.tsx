@@ -1,5 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import AgendarHorario from './pages/Agendar_horario'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AgendarHorario from './pages/Agendar_horario';
+import TypographyTest from './pages/TypographyTest/TypographyTest';
 
 function App() {
 
@@ -7,14 +8,11 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/' element={<AgendarHorario />}></Route>
+          <Route path='/' element={<TypographyTest />}></Route>
         </Routes>
       </Router>
-        
-
-   
     </>
-  )
+  );
 }
 
-export default App
+export default App;
