@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    position: fixed;
+    background-image: url('../assets/image-cabeleleiro.png');
+    background-size: 100% 50%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-color: #171717;
+}
+
+
+/*Define o container principal com as fimensões fixas*/
+.login-container {
+    width: 100%;
+    max-width: 380px;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-family: 'Radley';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.form-section {
+    flex: 1;
+    padding: 0 2rem 2rem 2rem; 
+    display: flex;
+    align-items: flex-start; 
+    justify-content: flex-end; 
+    flex-direction: column; 
+    margin-top: -50px; 
+}
+
+.form-content {
+    width: 100%;
+    max-width: 350px;
+    margin-top: auto; 
+    padding-bottom: 20px; 
+}
+
+.form-content h1 {
+    font-size: 2.5rem; 
+}
+
+.login-container h1{
+    font-size: 2.5rem; 
+}
+
+
+
+/*Arrumando os inputs*/
+.input-field {
+    position: relative;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 15px 45px 15px 15px; /* Espaço extra à direita para o ícone */
+    border: 1px solid #e0e0e0;
+    border-radius: 30px; /* Bordas bem arredondadas */
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box; 
+    background-color: #323446;
+    color: #666875;
+}
+
+.input-field input:focus {
+    border-color: #888;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Estilo dos ícones */
+.input-icon {
+    position: absolute;
+    right: 15px; /* Distância da borda direita */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1.2rem;
+    pointer-events: none; /* Permite clicar através do ícone */
+}
+
+
+
+
+
+
+
+/*Button custom*/
+
+.login-button {
+    width: 250px;
+    padding: 16px;
+    background-color: #CCA76A; /* Cor dourada especificada */
+    color: #fff; /* Texto branco para contraste */
+    border: none;
+    border-radius: 30px; /* Mesmo arredondamento dos inputs */
+    font-size: 1rem;
+    font-weight: 600; /* Texto um pouco mais forte */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px; /* Espaçamento dos inputs */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estados do botão */
+.login-button:hover {
+    background-color: #B89359; /* Tom mais escuro para hover */
+    transform: translateY(-2px); /* Efeito de levantar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.login-button:active {
+    transform: translateY(0); /* Efeito de pressionar */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.login-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(204, 167, 106, 0.4); /* Glow effect */
+}
