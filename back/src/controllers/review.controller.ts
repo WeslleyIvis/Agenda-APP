@@ -53,31 +53,29 @@ export const createReview = async (req: Request, res: Response): Promise<Respons
   } catch (error) {
     res.status(500).json({ error: 'Erro em criar review', details: error })
   }
-
-  
 }
 
 export const delReview = async (req: Request, res: Response): Promise<Response | undefined> => {
     try {
         const {id} = req.params;
         const deleted=await ReviewsModel.findByIdAndDelete(id)
-       if(!deleted){
-        return res.status(404).json({message: "Review not found!"})
-       }
-       return res.status(200).json(deleted)
+        if(!deleted){
+            return res.status(404).json({message: "Review not found!"})
+        }
+        return res.status(200).json(deleted)
 
-      } catch (error) {
+    } catch (error) {
         res.status(500).json({ error: 'Erro em deletar review', details: error })
-      }
     }
+}
 
 export const searchReview = async (req: Request, res: Response): Promise<Response | undefined> => {
     try {
         const {id} = req.params;
         const review=await ReviewsModel.findById(id)
-       if(!review){
-        return res.status(404).json({message: "Review not found!"})
-       }
+        if(!review){
+            return res.status(404).json({message: "Review not found!"})
+        }
        return res.status(200).json(review)
 
       } catch (error) {
@@ -89,10 +87,10 @@ export const updateReview = async (req: Request, res: Response): Promise<Respons
     try {
         const {id} = req.params;
         const review=await ReviewsModel.findByIdAndUpdate(id, req.body, {new:true})
-       if(!review){
-        return res.status(404).json({message: "Review not found!"})
-       }
-       return res.status(200).json(review)
+        if(!review){
+            return res.status(404).json({message: "Review not found!"})
+        }
+        return res.status(200).json(review)
 
       } catch (error) {
         res.status(500).json({ error: 'Erro em atualizar review', details: error })
