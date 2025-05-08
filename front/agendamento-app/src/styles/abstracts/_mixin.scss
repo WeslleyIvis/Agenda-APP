@@ -1,0 +1,27 @@
+@mixin typography(
+  $size: ($default-size-min, $default-size-max), // Tamanho mínimo e máximo
+  $font-family: $font-family-base, // Família da fonte
+  $color: $default-color, // Cor da fonte
+  $line-height: $default-line-height, // Altura da linha
+  $font-weight: $default-font-weight, // Peso da fonte
+  $letter-spacing: $default-letter-spacing, // Espaçamento entre as letras
+  $text-transform: $default-text-transform, // Transformação do texto
+  $vw-size: $default-vw-size // Tamanho fluido baseado em vw
+) {
+  // Desestrutura o tamanho passado como $size
+  $min-size: nth($size, 1);
+  $max-size: nth($size, 2);
+
+  font-size: clamp(
+    #{$min-size}, 
+    #{$vw-size}, 
+    #{$max-size}
+  );
+  
+  font-family: $font-family; //Define a família da fonte
+  color: $color; // Define a cor do texto
+  line-height: $line-height; // Define a altura da linha
+  font-weight: $font-weight; // Define o peso da fonte
+  letter-spacing: $letter-spacing; // Define o espaçamento entre as letras
+  text-transform: $text-transform; // Define a transformação do texto
+}

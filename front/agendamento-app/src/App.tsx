@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import AgendarHorario from './pages/AgendaHorarios/AgendaHorario'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AgendarHorario from './pages/AgendaHorarios/AgendaHorario';
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
         </Routes>
       </Router>      
     </>
-  )
+  );
 }
 
-export default App
+export default App;

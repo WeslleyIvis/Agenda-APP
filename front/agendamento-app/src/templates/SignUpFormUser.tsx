@@ -1,9 +1,9 @@
-import "./SignUpFormUser.css";
-import { CiUser } from "react-icons/ci";
-import { MdOutlineEmail } from "react-icons/md";
-import { CiPhone } from "react-icons/ci";
-import { FaRegEye } from "react-icons/fa6";
-import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import './SignUpFormUser.css';
+import { CiUser } from 'react-icons/ci';
+import { MdOutlineEmail } from 'react-icons/md';
+import { CiPhone } from 'react-icons/ci';
+import { FaRegEye } from 'react-icons/fa6';
+import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 
 const SignUpForm = () => {
   return (
