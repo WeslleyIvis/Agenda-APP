@@ -1,4 +1,4 @@
-import './LoginScreen.css';
+import './LoginScreen.scss';
 import { CiUser } from 'react-icons/ci';
 import { FaRegEye } from 'react-icons/fa';
 

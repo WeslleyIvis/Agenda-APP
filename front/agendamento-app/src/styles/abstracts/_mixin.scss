@@ -1,3 +1,4 @@
+// Mixin de tipográfia
 @mixin typography(
   $size: ($default-size-min, $default-size-max), // Tamanho mínimo e máximo
   $font-family: $font-family-base, // Família da fonte
@@ -24,4 +25,51 @@
   font-weight: $font-weight; // Define o peso da fonte
   letter-spacing: $letter-spacing; // Define o espaçamento entre as letras
   text-transform: $text-transform; // Define a transformação do texto
+}
+
+// Mixin de botão
+@mixin button(
+  $size: 'medium', // Define o tamanho do botão ('small', 'medium' ou 'large')
+  $radius: 4px, // Controla o arredondamento das bordas (4px é o padrão)
+  $bg-color: $primary-color, // Cor de fundo (usa uma variável $primary-color por padrão)
+  $text-color: $default-color, // Cor do texto (branco por padrão)
+  $border: none // Estilo da borda (none por padrão)
+) {
+  // Herda a tipografia
+  @include typography(
+    $size: if($size == 'small', 14px, if($size == 'large', 18px, 16px)), // Define o tamanho da fonte baseado no $size
+    $color: $text-color, // Aplica a cor do texto
+    $font-weight: 500 // Peso da fonte (500 = semi-bold)
+  );
+
+  // Estilos base do botão
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: if($size == 'small', 6px 12px, if($size == 'large', 12px 24px, 8px 16px)); // Define o padding baseado no tamanho
+
+  // Estilos visuais
+  background: $bg-color;
+  border: $border;
+  border-radius: $radius;
+  cursor: pointer;
+  transition: all 0.2 ease;
+
+  &:hover:not(:disabled) { // Hover: Levanta o botão 1px (efeito sutil)
+    transform: translateY(-1px); 
+  }
+  
+  &:disabled { // Disabled: Reduz a opacidade e mostra cursor "não permitido"
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// Versão com radius pré-definidos (opcional)
+@mixin button-rounded($size: 'medium') {
+  @include button($size, 50px); // Radius arredondado
+}
+
+@mixin button-square($size: 'medium') {
+  @include button($size, 0); // Sem radius
 }

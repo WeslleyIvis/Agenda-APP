@@ -110,18 +110,20 @@ body {
 /*Button custom*/
 
 .login-button {
-    width: 250px;
-    padding: 16px;
-    background-color: #CCA76A; /* Cor dourada especificada */
-    color: #fff; /* Texto branco para contraste */
-    border: none;
-    border-radius: 30px; /* Mesmo arredondamento dos inputs */
-    font-size: 1rem;
-    font-weight: 600; /* Texto um pouco mais forte */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 10px; /* Espaçamento dos inputs */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    @include button('large'); // Deve funcionar sem erros
+
+    // width: 250px;
+    // padding: 16px;
+    // background-color: #CCA76A; /* Cor dourada especificada */
+    // color: #fff; /* Texto branco para contraste */
+    // border: none;
+    // border-radius: 30px; /* Mesmo arredondamento dos inputs */
+    // font-size: 1rem;
+    // font-weight: 600; /* Texto um pouco mais forte */
+    // cursor: pointer;
+    // transition: all 0.3s ease;
+    // margin-top: 10px; /* Espaçamento dos inputs */
+    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 /* Estados do botão */

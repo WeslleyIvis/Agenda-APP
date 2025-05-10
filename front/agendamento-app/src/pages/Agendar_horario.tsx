@@ -1,4 +1,4 @@
-import MenuMobile from '../components/Menu_mobile';
+import MenuMobile from '../components/menu_mobile/MenuMobile';
 import iconSeta from '../assets/icon_seta.svg';
 
 const AgendarHorario = () => {

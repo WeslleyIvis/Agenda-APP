@@ -1,8 +1,11 @@
+@use "@styles/abstracts" as *; // Importa tudo de uma vez
+
+
 .container {
   h1 {
     @include typography(
       $size: (24px, 32px),
-      $color: $app-1,
+      $color: $primary-color,
       $font-weight: 700,
       $line-height: 1.2
     );
