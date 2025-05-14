@@ -1,4 +1,4 @@
-import './SignUpFormProfessional.css';
+import '../SignUpFormProfessional/SignUpFormProfessional.scss';
 import { CiUser } from 'react-icons/ci';
 import { MdOutlineEmail } from 'react-icons/md';
 import { CiPhone } from 'react-icons/ci';
