@@ -1,19 +1,21 @@
+import React from 'react';
 import iconSeta from '../../assets/icon_seta.svg';
+import styles from './ButtonVoltar.module.scss'
 
-const ButtonVoltar = () => {
+type ButtonVoltarProps = {
+    placeholder?: React.ReactNode
+}
+
+const ButtonVoltar: React.FC<ButtonVoltarProps> = ({placeholder}) => {
   return (
-    <div>
-      <button 
-        style={{
-          background: 'rgb(33, 33, 33)', 
-          border: 'none',
-          borderRadius: '5px'
-        }}
-        type="button"    
-      >
-        <img style={{padding: '5px 10px'}} src={iconSeta} alt="Voltar" />
+    <div className={styles.containerButtonVoltar}>
+      <button className={styles.buttonVoltar} type="button">
+        <img src={iconSeta} alt="Voltar" />
       </button>
-      <p>Lorem Ipsum</p>
+      <p>
+        { placeholder }
+      </p>
+      <p></p>
     </div>
   );
 };
