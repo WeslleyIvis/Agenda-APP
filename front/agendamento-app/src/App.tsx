@@ -9,7 +9,7 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/' element={<SignUpFormUser />}></Route>
+          <Route path='/' element={<AgendarHorario />}></Route>
         </Routes>
       </Router>      
     </>
