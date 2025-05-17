@@ -9,7 +9,6 @@ interface PropsSelectDay {
     days: DayFormat[],
     nameMonth: string,
     nextWeek: number,
-    backWeek: number,
     setCountDays: React.Dispatch<React.SetStateAction<number>>
     handlerWeekRef: React.RefObject<number[]>
 }

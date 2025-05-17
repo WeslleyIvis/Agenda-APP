@@ -45,7 +45,6 @@
     text-align: center;
     gap: 20px;
     overflow: hidden;
-    transition: margin-right 2s;
 
      .selectedItem {
             background-color: $default-color-enfase;
@@ -58,7 +57,7 @@
         cursor: pointer;
 
         p {
-            transition: all 0.5s ease-out;
+            transition: $bg-transition;
         }
         
         :first-child {
