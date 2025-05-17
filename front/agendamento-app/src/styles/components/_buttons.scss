@@ -1,0 +1,24 @@
+@use "../abstracts/mixin" as *;
+@use "../abstracts/variables" as *;
+
+.button-primary {
+  @include button(
+    100%,        // largura
+    45px,         // altura
+    #007bff,      // background
+    5px,          // border-radius
+    transparent,      // cor da borda
+    16px,         // tamanho da fonte
+    #0056b3,      // background no hover
+    10px 20px,    // padding
+    #fff,         // cor do texto
+    #eaeaea,       // cor do texto no hover
+  );
+}
+
+.container-button {
+    @include container-Button(
+        0 20px, //margin
+        0 0 80px //padding
+    )
+}

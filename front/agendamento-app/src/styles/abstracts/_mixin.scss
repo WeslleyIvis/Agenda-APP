@@ -25,3 +25,45 @@
   letter-spacing: $letter-spacing; // Define o espaçamento entre as letras
   text-transform: $text-transform; // Define a transformação do texto
 }
+
+@mixin button(
+  $w,
+  $h,
+  $bg-color,
+  $b-radius,
+  $b-color,
+  $f-size,
+  $hover-bg-color,
+  $padding: 0,
+  $text-color: #fff,
+  $hover-text-color: $text-color,
+  $transition: all 0.3s ease,
+  $font-weight: normal,
+  $border: 1px solid $b-color
+) {
+  width: $w;
+  height: $h;
+  background-color: $bg-color;
+  border-radius: $b-radius;
+  border: $border;
+  color: $text-color;
+  font-size: $f-size;
+  font-weight: $font-weight;
+  padding: $padding;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-bg-color;
+    color: $hover-text-color;
+  }
+}
+
+@mixin container-Button (
+  $margin,
+  $padding
+) {
+  margin: $margin;
+  padding: $padding;
+}
+  
