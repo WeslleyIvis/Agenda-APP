@@ -1,5 +1,6 @@
 @use './abstracts' as *;
 @use './base/reset';
+@use './components/buttons';
 
 body {
   font-family: $font-family-base;

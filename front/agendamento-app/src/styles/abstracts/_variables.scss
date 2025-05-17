@@ -2,9 +2,13 @@
 $default-color-enfase: #CCA76A;
 $default-color: #FFFFFF;
 $font-color-gray: #CFCFCF;
-$background-items: #282538;
+$background-items: #2B2B2B;
 $app-5: #9784FF;
 $app-6: #171717;
+
+// hover
+$bg-color-hover: #555555;
+$bg-transition: all 0.5s ease-out;
 
 // font
 $default-size-min: 16px;// Mínimo (mobile)
@@ -28,3 +32,6 @@ $default-text-transform: none;
 
 //viewport
 $default-vw-size: 1.5vw;
+
+// Margin-mobile 
+$margin-items-mobile: 0 20px;
