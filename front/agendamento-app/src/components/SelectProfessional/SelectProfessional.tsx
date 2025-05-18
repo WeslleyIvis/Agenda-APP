@@ -28,9 +28,17 @@ const SelectProfessional: React.FC<PropsSelectProfessional> = ({setSaveSeletecte
             })
     }, [])
 
-    if(!dataProfessional) return <p>Carregando</p>
+    if(!dataProfessional) return (
+        <div className={`${style.containerLoading} align-mobile-containers`}>
+            <p><b>Escolha o Profissional</b></p>
+            <div className='container-flex-professionals '>
+                {[1,2,3].map((item) => (
+                    <div key={item} className='loading-box-professional'></div>
+                ))}
+            </div>
+        </div>
+    )
     
-
     return (
         <div className={style.containerProfessionals}>
             <p><b>Escolha o Profissional</b></p>

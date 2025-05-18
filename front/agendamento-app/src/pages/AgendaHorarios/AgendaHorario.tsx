@@ -5,9 +5,9 @@ import MenuMobile from '../../components/menu_mobile/MenuMobile';
 import ButtonVoltar from '../../components/ButtonVoltar/ButtonVoltar';
 import SelectDay from '../../components/SelectDay/SelectDay';
 import SelectHour from '../../components/SelectHour/SelectHour';
+import SelectProfessional from '../../components/SelectProfessional/SelectProfessional';
 
 import styles from './AgendaHorario.module.scss'
-import SelectProfessional from '../../components/SelectProfessional/SelectProfessional';
 
 export type DayFormat = {
     day: number,
@@ -40,7 +40,7 @@ const AgendaHorario = () => {
         }
     }
 
-    // Evento de redimensionamento da janela
+    // Event rezise window
     useEffect(() => {
         updateViewDays();
         
@@ -84,6 +84,7 @@ const AgendaHorario = () => {
   return (
     <>
         <div className={styles.mainContainer}>
+            <div className={styles.loadingBox}></div>
             <ButtonVoltar placeholder="Agendar Horário"/>
             <SelectDay 
                 days={days}
