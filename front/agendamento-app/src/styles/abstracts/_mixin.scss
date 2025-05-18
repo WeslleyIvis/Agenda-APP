@@ -33,12 +33,11 @@
   $b-radius,
   $b-color,
   $f-size,
-  $hover-bg-color,
   $padding: 0,
   $text-color: #fff,
   $hover-text-color: $text-color,
   $transition: all 0.3s ease,
-  $font-weight: normal,
+  $font-weight: 600,
   $border: 1px solid $b-color
 ) {
   width: $w;
@@ -54,7 +53,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: $hover-bg-color;
+    background-color: rgb(150, 120, 71);
     color: $hover-text-color;
   }
 }
@@ -67,3 +66,32 @@
   padding: $padding;
 }
   
+@mixin loading-box (
+  $w,
+  $h,
+  $bg-color,
+  $bg-color-gradient,
+  $bd-radius,
+  $animation: wave 1.5s infinite linear
+) {
+  min-width: $w;
+  height: $h;
+  background: linear-gradient(
+    90deg,
+    $bg-color 25%,
+    $bg-color-gradient 50%,
+    $bg-color 75%
+  );
+  background-size: 200% 100%;
+  border-radius: $bd-radius;
+  animation: $animation;
+}
+
+@keyframes wave {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

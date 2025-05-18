@@ -1,9 +1,14 @@
 @use './abstracts' as *;
 @use './base/reset';
 @use './components/buttons';
+@use './components/loadings';
 
 body {
   font-family: $font-family-base;
   background-color: $app-6;
   color: white;
+}
+
+.align-mobile-containers {
+  margin: $margin-items-mobile;
 }

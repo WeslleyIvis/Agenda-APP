@@ -1,19 +1,42 @@
 @use '@/styles/abstracts/variables' as *;
 
-
-
 .containerProfessionals {
     display: grid;
     gap: 10px;
-    overflow-x: scroll;
     margin: $margin-items-mobile;
-
+    
     div {
+        overflow-x: scroll;
         display: flex;  
         gap: 10px;
         cursor: pointer;
+        margin-bottom: 5px;
 
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 5px;    
+        }
+
+        /* Cor de fundo da barra */
+        &::-webkit-scrollbar-track {
+            background: #81818123;
+            border-radius: 4px;
+        }
+
+        /* Cor do "thumb" (parte que desliza) */
+        &::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        /* Hover no thumb */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        
         .cardProfessional {
+            overflow-x: hidden;
             min-width: 150px;
             height: 150px;
             display: flex;
@@ -39,9 +62,14 @@
         }
 
         .selected {
-            background-color: $default-color-enfase !important;
+            background-color: $background-selected-item !important;
         }
     }
 
 }
 
+.containerLoading {
+    overflow: hidden;
+    display: grid;
+    gap: 10px
+}
