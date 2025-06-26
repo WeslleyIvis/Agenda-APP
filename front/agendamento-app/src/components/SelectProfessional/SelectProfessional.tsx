@@ -12,7 +12,7 @@ const SelectProfessional: React.FC<PropsSelectProfessional> = ({setSaveSeletecte
     const [selectedProfessional, setSelectedProfessional] = useState<number | null>(null)
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/professionals')
+        fetch('http://192.168.1.121:3001/api/professionals')
             .then((r) => {
                 if (!r.ok) {
                     throw new Error('Erro na busca')

@@ -1,46 +1,63 @@
-import './LoginScreen.css';
+import { useState } from 'react';
+
+import styles from './LoginScreen.module.scss';
 import { CiUser } from 'react-icons/ci';
 import { FaRegEye } from 'react-icons/fa';
 
+const inputsForms = [
+  {
+    icon: '',
+    name: "email",
+    type:"email",
+    placeholder: "Email",
+  },
+  {
+    icon: '',
+    name: "password",
+    type:"password",
+    placeholder: "Senha",
+  }
+]
+
 const LoginScreen = () => {
+    const [form, setForm] = useState({email: '', password: ''})
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(e)
+        setForm({ ...form, [e.target.name]: e.target.value})
+    }
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        console.log("From data:", form)
+    }
+
   return (
-
-    <div className="login-container">
-      <div className="background-section"></div>
-      <h1 className="title">HBGB</h1>
-
-      <div className="form-section">
-        <div className="form-content">
-          <h1>Bem vindo</h1>
-
-          <form className="login-form">
-            <div className="input-field">
-              <input
-                type="email"
-                placeholder="Email"
-                required
-              />
-              <CiUser className="input-icon" />
+    <div>
+        <div className={styles.bgImage}></div>
+        <section>
+            <h1>HGBG</h1>
+            <div>
+                <h2>Bem Vindo</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing eli,</p>
             </div>
+            <form onSubmit={handleSubmit}>
+                {inputsForms.map((item, i) => (
+                    <label key={i}>
+                        <input 
+                            type={item.type} 
+                            name={item.name}
+                            value={form[item.name as keyof typeof form]}
+                            placeholder={item.placeholder}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label> 
+                ))}
+                <button type='submit'>Entrar</button>
+            </form>
 
-            <div className="input-field">
-              <input
-                type="password"
-                placeholder="Senha"
-                required
-              />
-              <FaRegEye className="input-icon" />
-            </div>
-
-            <button type="submit" className="login-button" style={{color: '#4A4444'}}>Login</button>
-
-            <div className="form-footer">
-              <a href="#" className="forgot-password" style={{color:'#AEAEAE'}}>Esqueceu sua senha?</a>
-              <p>Não tem uma conta? <a href="#" className="register-link" style={{color: '#DF5F4C'}}>Criar</a></p>
-            </div>
-          </form>
-        </div>
-      </div>
+        </section>
     </div>
   );
 };
