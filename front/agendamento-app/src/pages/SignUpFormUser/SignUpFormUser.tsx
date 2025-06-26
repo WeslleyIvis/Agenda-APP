@@ -5,7 +5,7 @@ import { CiPhone } from 'react-icons/ci';
 import { FaRegEye } from 'react-icons/fa6';
 import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 
-const SignUpForm = () => {
+const SignUpFormUser = () => {
   return (
     <div className="signup-container">
       <MdOutlineArrowBackIosNew className="back-icon" />
@@ -50,4 +50,4 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+export default SignUpFormUser;
