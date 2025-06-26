@@ -21,3 +21,17 @@
         15px 0 80px //padding
     )
 }
+
+.button-secondary {
+  @include button(
+    100%,        // largura
+    40px,         // altura
+    $default-color-enfase,      // background
+    50PX,          // border-radius
+    transparent,      // cor da borda
+    16px,         // tamanho da fonte
+    10px 20px,    // padding
+    #fff,         // cor do texto
+    #eaeaea,       // cor do texto no hover
+  );
+}
