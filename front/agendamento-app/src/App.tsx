@@ -28,6 +28,11 @@ const AnimatedRoutes = () => {
 						<AgendarHorario />
 					</PageWrapper>
 				}></Route>
+				<Route path='/create' element= {
+					<PageWrapper>
+						<SignUpFormUser />
+					</PageWrapper>
+				}></Route>
 			</Routes>
 		</AnimatePresence>
 	)
