@@ -1,53 +1,89 @@
-import './SignUpFormUser.scss';
-import { CiUser } from 'react-icons/ci';
-import { MdOutlineEmail } from 'react-icons/md';
-import { CiPhone } from 'react-icons/ci';
-import { FaRegEye } from 'react-icons/fa6';
-import { MdOutlineArrowBackIosNew } from 'react-icons/md';
+import React from 'react'
+import AutForm from '../../components/AutoForm/AutoForm'
+import { icons } from '../../assets/icons';
+
+interface RegisterUserFormValues {
+    name: string;
+    email: string;
+    phone_number: string;
+    password: string;
+    confirmPassword: string;
+}
 
 const SignUpFormUser = () => {
-  return (
-    <div className="signup-container">
-      <MdOutlineArrowBackIosNew className="back-icon" />
-      <h1>Criar conta</h1>
-      
-      <form className="signup-form">
+    const [registerUserFormValues, setregisterUserFormValues] = React.useState<RegisterUserFormValues>({
+        name: '',
+        email: '',
+        phone_number: '',
+        password: '',
+        confirmPassword: ''
+    })
 
-        <div className="form-group">
-          <label htmlFor="name"></label>
-          <input type="text" id="name" placeholder="Nome" required/>
-          <CiUser className="input-icon"/>
-        </div>
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setregisterUserFormValues(
+            { ...registerUserFormValues, 
+                [e.target.name]: e.target.value 
+            })
+    }
 
-        <div className="form-group">
-          <label htmlFor="name"></label>
-          <input type="text" id="email" placeholder="Email" required/>
-          <MdOutlineEmail className="input-icon"/>
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="name"></label>
-          <input type="text" id="phone" placeholder="Celular" required/>
-          <CiPhone className="input-icon"/>
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="password"></label>
-          <input type="password" id="password" placeholder="Senha" required/>
-          <FaRegEye className="input-icon"/>
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="confirm-password"></label>
-          <input type="password" id="confirm-password" placeholder="Confirmar Senha" required/>
-          <FaRegEye className="input-icon"/>
-        </div>
-        
-      </form>
-      <button type="submit" className="create-button">Criar</button>
-      <p className="login-link">Já possui conta? <a href="#" style={{color:'#DF5F4C'}}>Entrar</a></p>
-    </div>
-  );
-};
+    const handleRegisterSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        console.log("Formularioo: ", registerUserFormValues)
+    }
 
-export default SignUpFormUser;
+    const registeFormItems = [
+        {
+            icon: icons.icon_user,
+            name: "name",
+            type: "text",
+            placeholder: "Nome Completo",
+        },
+        {
+            icon: icons.icon_envelope,
+            name: "email",
+            type: "email",
+            placeholder: "Email",
+        },
+        {
+            icon: icons.icon_telephone,
+            name: "phone_number",
+            type: "tel",
+            placeholder: "Telefone",
+        },
+        {
+            icon: icons.icon_eye,
+            name: "password",
+            type: "password",
+            placeholder: "Senha",
+        },
+        {
+            icon: icons.icon_eye,
+            name: "confirmPassword",
+            type: "password",
+            placeholder: "Confirmar Senha",
+        }
+    ]
+
+    return (
+        <div className='container-login-screen'>
+            <div>
+                <h1 className='form-title'>Criar Conta</h1>
+            </div>
+            <AutForm 
+                items={registeFormItems} 
+                formValues={registerUserFormValues as any}
+                handleChange={handleChange}
+                handleSubmit={handleRegisterSubmit}
+            />
+            <div className='container-register' style={{paddingTop: '50px'}}>
+                <p>Já tem conta? 
+                    <b>
+                        <a href="/login"> Fazer Login</a>
+                    </b>
+                </p>
+            </div>
+        </div>
+    )
+}
+
+export default SignUpFormUser
