@@ -24,3 +24,39 @@
         )
     }
 }
+
+.containerLoginScreen {
+    padding: 25px;
+    gap: 20px;
+    text-align: center;
+    margin-top: 50px;
+    
+    h1 {
+        color: $default-color-enfase;
+        font-size: 50px;
+        font-weight: $default-font-weight-title;
+        margin-bottom: 50px;
+    }
+
+    .infoLogin {
+        p {
+            color: $font-color-gray;
+            font-size: 11px;
+            margin-top: 5px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-family: 'montserrat';
+        }
+    }
+
+    .containerRegister {
+        a {
+            color: $default-color-enfase;
+            font-weight: bolder;
+        }
+        padding-top: 50px
+    }
+}
+
