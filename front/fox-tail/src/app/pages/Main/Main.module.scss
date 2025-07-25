@@ -1,0 +1,7 @@
+@use '../../styles/abstracts/variables' as *;
+
+.containerMain {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
