@@ -1,0 +1,23 @@
+@use '../../styles/abstracts/variables' as *;
+
+.container-back-btn {
+    position: fixed;
+    top: 25;
+    left: 25;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: $background-color;
+    border-radius: 5px;
+
+    .router {
+        height: 35px;
+        width: 35px;
+        text-align: center;
+    }
+}
+
+.arrow {
+    color: green;
+}
