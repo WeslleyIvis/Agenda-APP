@@ -1,0 +1,85 @@
+@use "../abstracts/mixin" as *;
+@use "../abstracts/variables" as *;
+
+.containerForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+    padding: 20px 0;
+    border-radius: 10px;
+
+    label {
+        position: relative;
+
+        input {
+            width: 100%;
+            padding: 10px 20px 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 100px;
+            background-color: $dark-color-button;
+            color: $default-color;
+            outline: none;    
+            font-family: $font-family-base;
+        }
+
+        svg {
+            position: absolute;
+            top: calc(50% - 10px);
+            left: 90%;
+            transform: translateY(-50%);
+            color: $font-color-gray;
+            transition: color 0.3s ease-in-out;
+
+            &.iconInput:hover {
+                color: $default-color-enfase;
+            }
+        }
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        border: none;
+        border-radius: 100px;
+        background-color: $default-color-enfase;
+        color: $default-color;
+        font-weight: $default-font-weight-title;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+        &:hover {
+            background-color: $bg-color-hover;
+        }
+    }
+}
+
+.container-login-screen {
+    padding: 25px;
+    gap: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form-title {
+    color: $default-color-enfase;
+    font-size: 42px;
+    font-weight: bolder;
+    font-family: $font-family-base;
+    margin-bottom: 25px;
+}
+
+.form-subtitle {
+    color: $default-color;
+    font-size: 36px;
+    font-weight: $default-font-weight;
+}
+
+.form-text {
+    color: $font-color-gray;
+    font-size: 11px;
+    margin-bottom: 20px;
+}
