@@ -1,0 +1,42 @@
+@use '../../styles/abstracts/variables' as *;
+
+.containerSelecteHour  {
+    margin: $margin-items-mobile;
+
+    p {
+        padding-bottom: 20px;
+
+        b {
+            color: $default-color-enfase;
+        }
+    }
+}
+
+.btnSelecteHour {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 15px;
+    
+    button {
+        padding: 10px 15px;
+        text-align: center;
+        background-color: $background-items;
+        border-radius: 10px;
+        border: transparent;
+        color: white;
+        font-size: 1em;
+        font-family: $font-family-base;
+        cursor: pointer;
+    }
+
+    :hover {
+        background-color: $bg-color-hover;
+        transition: $bg-transition;
+    }
+
+    .selectedHour {
+        transition: all 0.5s ease-out;
+        background-color: $default-color-enfase;
+    }
+}
