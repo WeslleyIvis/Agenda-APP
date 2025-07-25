@@ -1,0 +1,65 @@
+@use '../../styles/abstracts/variables' as *;
+
+.profile-professional {
+    background-color: #1d3647;
+    text-align: center;
+    padding: 30px;
+    display: grid;
+    gap: 15px;
+};
+
+
+.items-professional {
+    display: grid;
+    gap: 5px;
+}
+
+.container-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.rounded-button {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: none;
+    margin: 5px 0;
+    cursor: pointer;
+
+    :hover {
+        background-color: darkblue;
+    }
+}
+
+.container-info-professional {
+    display: grid;
+    gap: 30px;
+    padding: 25px 20px 100px 20px;
+    max-width: $max-width-mobile;
+    margin: 0 auto;
+
+    .items-info-professional {
+        display: grid;
+        gap: 10px;
+    }
+    
+    .disply-days-hours {
+        display: flex;
+        justify-content: space-between;
+        color: $font-color-gray-text;
+    }
+
+    .is-today {
+        color: $default-color-enfase;
+        color: #15DA78;
+    }
+
+    .container-locale {
+        display: flex;
+        gap: 25px;
+    }
+}
+
+ 
