@@ -1,0 +1,47 @@
+// colors
+$default-color-enfase: #CCA76A;
+$default-color: #FFFFFF;
+$color-enfase-1: #9784FF;
+$font-color-gray: #CFCFCF;
+$font-color-gray-text: #979797;
+$font-color-gray-grafite: #7B7D88;
+
+$background-items: #2B2B2B;
+$background-selected-item: #352F48;
+$background-loading-gradient: #464646;
+$background-color: #171717;
+$dark-color-button: #323446;
+
+// hover
+$bg-color-hover: #5555555e;
+$bg-transition: all 0.5s ease-out;
+
+// font
+$default-size-min: 16px;// Mínimo (mobile)
+$size-text-mini-no-emphasis: 14px;// Mínimo (mobile)
+$default-size-max: 24px;// Máximo (para telas maiores, mesmo sem desktop)
+
+//family
+$font-family-base: 'Roboto Flex', sans-serif;
+
+//line-height
+$default-line-height: 1.5;
+
+//weight
+$default-font-weight: 400;
+$default-font-weight-title: bold;
+
+//letter-spacing
+$default-letter-spacing: normal;
+
+//text-transform
+$default-text-transform: none;
+
+//viewport
+$default-vw-size: 1.5vw;
+
+// Margin-mobile 
+$margin-items-mobile: 0 20px;
+
+// Max width
+$max-width-mobile: 430px

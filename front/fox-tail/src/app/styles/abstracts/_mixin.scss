@@ -1,0 +1,97 @@
+@mixin typography(
+  $size: ($default-size-min, $default-size-max), // Tamanho mínimo e máximo
+  $font-family: $font-family-base, // Família da fonte
+  $color: $default-color, // Cor da fonte
+  $line-height: $default-line-height, // Altura da linha
+  $font-weight: $default-font-weight, // Peso da fonte
+  $letter-spacing: $default-letter-spacing, // Espaçamento entre as letras
+  $text-transform: $default-text-transform, // Transformação do texto
+  $vw-size: $default-vw-size // Tamanho fluido baseado em vw
+) {
+  // Desestrutura o tamanho passado como $size
+  $min-size: nth($size, 1);
+  $max-size: nth($size, 2);
+
+  font-size: clamp(
+    #{$min-size}, 
+    #{$vw-size}, 
+    #{$max-size}
+  );
+  
+  font-family: $font-family; //Define a família da fonte
+  color: $color; // Define a cor do texto
+  line-height: $line-height; // Define a altura da linha
+  font-weight: $font-weight; // Define o peso da fonte
+  letter-spacing: $letter-spacing; // Define o espaçamento entre as letras
+  text-transform: $text-transform; // Define a transformação do texto
+}
+
+@mixin button(
+  $w,
+  $h,
+  $bg-color,
+  $b-radius,
+  $b-color,
+  $f-size,
+  $padding: 0,
+  $text-color: #fff,
+  $hover-text-color: $text-color,
+  $transition: all 0.3s ease,
+  $font-weight: 600,
+  $border: 1px solid $b-color
+) {
+  width: $w;
+  height: $h;
+  background-color: $bg-color;
+  border-radius: $b-radius;
+  border: $border;
+  color: $text-color;
+  font-size: $f-size;
+  font-weight: $font-weight;
+  padding: $padding;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(150, 120, 71);
+    color: $hover-text-color;
+  }
+}
+
+@mixin container-Button (
+  $margin,
+  $padding
+) {
+  margin: $margin;
+  padding: $padding;
+}
+  
+@mixin loading-box (
+  $w,
+  $h,
+  $bg-color,
+  $bg-color-gradient,
+  $bd-radius,
+  $animation: wave 1.5s infinite linear
+) {
+  min-width: $w;
+  height: $h;
+  background: linear-gradient(
+    90deg,
+    $bg-color 25%,
+    $bg-color-gradient 50%,
+    $bg-color 75%
+  );
+  background-size: 200% 100%;
+  border-radius: $bd-radius;
+  animation: $animation;
+}
+
+@keyframes wave {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

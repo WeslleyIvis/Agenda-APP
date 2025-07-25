@@ -1,0 +1,54 @@
+@use './abstracts' as *;
+@use './base/reset';
+@use './components/buttons';
+@use './components/loadings';
+@use './components/formularios';
+
+body {
+  font-family: $font-family-base;
+  background-color: $background-color;
+  color: white;
+}
+
+a, li, ul {
+  list-style: none;
+  text-decoration: none;
+  color: $default-color;
+}
+
+.align-mobile-containers {
+  margin: $margin-items-mobile;
+}
+
+b {
+    color: $default-color-enfase;
+    font-weight: bolder;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    display: block;
+}
+
+h3 {
+    padding-bottom: 5px;
+}
+
+.p-text {
+  font-size: $size-text-mini-no-emphasis;
+  color: $font-color-gray-text;
+}
+
+.p-mini {
+  font-size: 12px;
+  color: $font-color-gray-grafite;
+}
+
+.rounded-image {
+  border-radius: 50%;
+  margin: 0 auto;
+  object-fit: cover;
+}
